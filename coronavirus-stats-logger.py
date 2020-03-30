@@ -6,7 +6,6 @@ import sys
 
 
 def extract(country_name):
-    next_extraction_time = ""
     if len(sys.argv) == 2: country_name = sys.argv[1]
     country_data, date = track(country_name)
     with open(f"coronavirus-{country_name}.txt", "a") as file:
