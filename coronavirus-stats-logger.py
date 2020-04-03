@@ -1,8 +1,9 @@
 
 from coronavirus_tracker import track
-from datetime import datetime, timedelta
+from datetime import datetime
 import traceback
 import sys
+from time import sleep
 
 
 def extract(country_name):
@@ -11,17 +12,13 @@ def extract(country_name):
     with open(f"coronavirus-{country_name}.txt", "a") as file:
         file.write("\n\n\n" + date + "\n")
         file.writelines(country_data)
-    next_extraction_time = datetime.now() + timedelta(hours=2)
-    return next_extraction_time.strftime('%H:%M')
 
 
 def main():
     try:
-        next_extraction_time = extract("Ecuador")
         while True:
-            extraction_time = datetime.now().strftime('%H:%M') == next_extraction_time
-            if extraction_time:
-                next_extraction_time = extract("Ecuador")
+            extract("Ecuador")
+            sleep(7200)
     except KeyboardInterrupt:
         pass
     except Exception as e:
