@@ -22,6 +22,8 @@ def main():
             extraction_time = datetime.now().strftime('%H:%M') == next_extraction_time
             if extraction_time:
                 next_extraction_time = extract("Ecuador")
+    except KeyboardInterrupt:
+        pass
     except Exception as e:
         with open("coronavirus-stats-errors.txt", "a") as error_log:
             error_log.write(f"\n\nDATE: {datetime.now().strftime('%H:%M %x')}\n")
