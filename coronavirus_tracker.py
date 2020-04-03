@@ -8,6 +8,7 @@ import requests
 import warnings
 import traceback
 import sys
+from subprocess import call
 
 
 def warn(*args, **kwargs):
@@ -47,12 +48,19 @@ def track(country_name):
         print(country_data)
         print(f'\nDate: {date}')
         return country_data, date
-    except Exception as e:
+    except KeyboardInterrupt:
+        pass
+    except OSError:
+        call("netsh wlan connect ssid=CiscoST name=CiscoST".split(' '), shell=True)
+        with open("coronavirus-tracker-OSError-errors.txt", "a") as error_log:
+            error_log.write(f"\n\nDATE: {datetime.now().strftime('%H:%M %x')}\n")
+            error_log.writelines(traceback.format_exc())
+        track("Ecuador")
+    except:
         with open("coronavirus-tracker-errors.txt", "a") as error_log:
             error_log.write(f"\n\nDATE: {datetime.now().strftime('%H:%M %x')}\n")
             error_log.writelines(traceback.format_exc())
-    except KeyboardInterrupt as ki:
-        print(ki)
+
 
 
 if __name__ == '__main__':
