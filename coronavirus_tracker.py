@@ -46,7 +46,6 @@ def track(country_name):
         country_data = prettylist(data)
         print(country_data)
         print(f'\nDate: {date}')
-        sys.stdout.flush()
         return country_data, date
     except Exception as e:
         with open("coronavirus-tracker-errors.txt", "a") as error_log:
