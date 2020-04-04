@@ -21,7 +21,7 @@ def main():
             sleep(7200)
     except KeyboardInterrupt:
         pass
-    except Exception as e:
+    except Exception:
         with open("coronavirus-stats-errors.txt", "a") as error_log:
             error_log.write(f"\n\nDATE: {datetime.now().strftime('%H:%M %x')}\n")
             error_log.writelines(traceback.format_exc())
