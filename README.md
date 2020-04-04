@@ -1,5 +1,5 @@
 # Coronavirus Tracker
-These scripts let you retrieve data regarding coronavirus on a given country, and register an update of that data every certain time.  
+These scripts let you retrieve data regarding coronavirus on a given country, and register an update of that data every 2 hours.  
 
 ## Requirements
 Firt of all, to be able to even run any of these scripts, download [python](https://python.org/downloads/).
