@@ -1,7 +1,16 @@
 # Coronavirus Tracker
 These scripts let you retrieve data regarding coronavirus on a given country, and register an update of that data every certain time.  
 
-## Usage 
+## Requirements
+Firt of all, to be able to even run any of these scripts, download [python](https://python.org/downloads/).
+Secondly there are certain python modules required for the scripts to function correctly.
+To install them, run next command:
+```commandline
+pip install requirements.txt
+``` 
+
+## Usage
+### Retrieving Data
 To get data from a country, run next command:
 ```commandline
 py corona_tracker.py <country>
@@ -26,6 +35,7 @@ It should output something like this:
 
 Date: 21:41 03/27/20
 ```
+### Logging Data
 To write that data to a text file, run next command:
 ```commandline
 py coronavirus-stats-logger.py <country>
