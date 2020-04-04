@@ -1,7 +1,7 @@
 
 import re
 from bs4 import BeautifulSoup
-from MyPythonLibs.prettyit import prettylist
+from prettyit import prettylist
 import urllib
 from datetime import datetime
 import requests
