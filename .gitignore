@@ -1,5 +1,5 @@
 .\idea
-Lib
-Scripts
+.\Lib
+.\Scripts
 __pycache__
-pyvenv.cfg
+.\pyvenv.cfg
